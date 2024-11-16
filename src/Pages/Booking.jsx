@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Navbar from "../Components/Navbar";
-// import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Booking = () => {
   const { selectedSpot } = useContext(AuthContext);
@@ -45,6 +44,9 @@ if(user){
               <p className="mt-4 text-lg max-w-lg">
                 {selectedSpot.description}
               </p>
+              <Link to={`/`} className="mt-6 px-6 py-3 text-lg bg-mainColor text-blackColor font-semibold rounded hover:bg-yellow-600">
+                Go Back →
+              </Link>
             </div>
           </div>
 
@@ -105,6 +107,7 @@ if(user){
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </div>

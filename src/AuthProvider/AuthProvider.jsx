@@ -1,11 +1,57 @@
 import React, { createContext, useEffect, useState } from "react";
+import { app } from "../firebase/firebase.config";
 export const AuthContext = createContext();
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 
 const AuthProvider = ({ children }) => {
   const [selectedBackground, setSelectedBackground] = useState(null);
   const [selectedSpot, setSelectedSpot] = useState(null);
   const [travelSpots, setTravelSpots] = useState([]);
   const [user, setUser] = useState(null);
+  const [loading, setLoading] =useState(true)
+
+  const auth = getAuth(app);
+
+  const handleSignUp = (email, password) => {
+      setLoading(true)
+   return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const handleLogin = (email, password) => {
+      setLoading(true)
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+  const handleSignOut =()=>{
+    setLoading(true)
+    return signOut(auth)
+  }
+
+  const updateUserProfile = (updateData) => {
+    // console.log(updateData)
+    return updateProfile(auth.currentUser, updateData)
+  }
+
+
+
+useEffect(()=>{
+    const unsubscribe = onAuthStateChanged(auth, (currentUser)=>{
+        setUser(currentUser)
+        setLoading(false)
+    })
+    return () => {
+        unsubscribe()
+    } 
+},[])
+
+// console.log(user)
+
 
   useEffect(() => {
     fetch("travelSpots.json")
@@ -26,7 +72,12 @@ const AuthProvider = ({ children }) => {
     travelSpots,
     setTravelSpots,
     user,
-    
+    handleSignUp,
+    handleLogin,
+    setUser,
+    handleSignOut,
+    loading,
+    updateUserProfile
   };
 
   return (

@@ -14,8 +14,6 @@ const TravelCarousel = () => {
       } = useContext(AuthContext);
 
   const handleSpotClick = (spot) => {
-    console.log(spot)
-
     setSelectedBackground(spot.background);
     setSelectedSpot(spot);
   };
