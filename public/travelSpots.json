@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "name": "Cox's Bazar",
+      "description": "Cox's Bazar is a city, fishing port, and tourist center in southeastern Bangladesh. Famous for its long sandy beach.",
+      "image": "https://i.ibb.co.com/h2crWgR/coxs-bazar-bangladesh-68jb.jpg",
+      "background": "https://i.ibb.co.com/BrPqqG0/cox-bazar.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Sreemangal",
+      "description": "Sreemangal is known for its tea gardens, rainforests, and biodiversity in Bangladesh.",
+      "image": "https://i.ibb.co.com/smJjxKZ/sreemangol-2.webp",
+      "background": "https://i.ibb.co.com/WkFPJsX/sreemangol.webp"
+    },
+    {
+      "id": 3,
+      "name": "Sundarbans",
+      "description": "The Sundarbans is a mangrove area famous for its wildlife, including the Royal Bengal Tiger.",
+      "image": "https://i.ibb.co.com/m5QMD8n/Sundarban-Forest.jpg",
+      "background": "https://i.ibb.co.com/Gxyk5sF/sundarban.webp"
+    }
+  ]
+  
