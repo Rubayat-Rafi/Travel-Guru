@@ -22,7 +22,6 @@ const Signup = () => {
       alert("Passwords do not match!");
       return;
     }
-    // console.log(fName, lName, email, password, conpassword)
     handleSignUp(email, password)
       .then((userCredential) => {
         setUser(userCredential.user);
@@ -30,7 +29,6 @@ const Signup = () => {
         updateUserProfile({ displayName: dName })
           .then((data) => {
             navigate("/login");
-            console.log(data);
           })
           .catch((err) => {
             alert(err);

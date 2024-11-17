@@ -34,7 +34,6 @@ const AuthProvider = ({ children }) => {
   }
 
   const updateUserProfile = (updateData) => {
-    // console.log(updateData)
     return updateProfile(auth.currentUser, updateData)
   }
 
@@ -50,7 +49,6 @@ useEffect(()=>{
     } 
 },[])
 
-// console.log(user)
 
 
   useEffect(() => {
